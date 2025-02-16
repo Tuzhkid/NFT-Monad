@@ -247,11 +247,7 @@ const Home: NextPage = () => {
               </h1>
               {/* Description of your NFT Collection */}
               <p className={styles.description}>
-                {/* {contractMetadata?.description} */}
-                Nads are the backbone of the Monad community, Do you love Monad
-                as much as you say you do, 1000 Nads ID cards are live on Monad
-                devnet to commemorate the growth of this ecosytem, pick one
-                while you can, these are bound to go really fast.
+                {contractMetadata?.description}                
               </p>
               {/* <div>
                 Powered by thirdweb{" "}
