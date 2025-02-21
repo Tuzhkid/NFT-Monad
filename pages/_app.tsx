@@ -35,22 +35,7 @@ const queryClient = new QueryClient();
 // da80524de436716df3e7c21106b666ed 5ec9d980533be21c962580687677c0f9
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    if (isAuthenticated) return;
-
-    const password = prompt("Enter password:");
-
-    if (password === "naddevfeb2025") {
-        setIsAuthenticated(true);
-    } else {
-        alert("Unauthorized");
-        window.location.href = "about:blank"; // Prevents access
-    }
-}, [isAuthenticated]);
-
-  return isAuthenticated ? (
+  return (
     <QueryClientProvider client={queryClient}>
       <ThirdwebProvider
         secretKey="sx26XL_aTHOHv0BEX4IFPYYLL_4VfsTsXpQkyJP_WsTgC_ndNm3mis3jB2vSOsQj96svIEvDYmjfYbhKUo-tqg"
@@ -73,7 +58,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </ThirdwebProvider>
     </QueryClientProvider>
-  ) : null;
+  );
 }
 
 export default MyApp;
